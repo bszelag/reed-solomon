@@ -1,9 +1,9 @@
 import pytest
 from src.basics.exceptions import DivideByZeroException, AlphasFromDifferentField
-from tests.config import basic_alphas
+from tests.config import alphas
 
 
-@pytest.mark.parametrize("params", basic_alphas)
+@pytest.mark.parametrize("params", alphas)
 def test_generate_first_n_alphas(params):
-    alphas = params['a'].alpha_elements
-    assert alphas == params['b']
+    a = params['a'].alpha_elements
+    assert a == params['b']

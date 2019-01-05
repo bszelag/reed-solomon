@@ -2,6 +2,8 @@ import pytest
 from src.basics.exceptions import DivideByZeroException
 from tests.config import add_poly, sub_poly, mul_poly, div_poly, ge_poly
 
+from src.basics.polynomial import Polynomial
+from src.basics.bit import Bit
 
 @pytest.mark.parametrize("params", add_poly)
 def test_addition(params):
@@ -25,7 +27,8 @@ def test_multiplication(params):
 
 @pytest.mark.parametrize("params", div_poly)
 def test_div(params):
-    result, reminder = params['a'] / params['b']
+    result = params['a'].__div__(params['b'])
+    reminder = params['a'].__mod__(params['b'])
     print(result)
     print(reminder)
     print(params['c'])

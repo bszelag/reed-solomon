@@ -1,4 +1,4 @@
-from exceptions import DivideByZeroException
+from src.basics.exceptions import DivideByZeroException
 
 
 class Bit:
@@ -39,8 +39,10 @@ class Bit:
         result = Bit(self.value & other.value)
         return result
 
-    def __div__(self, other):
+    def __truediv__(self, other):
         if other.value == 0:
             raise DivideByZeroException(message='Cannot divide by zero')
         result = Bit(self.value)
         return result
+
+    __div__ = __truediv__

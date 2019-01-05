@@ -3,6 +3,7 @@ from src.basics.bit import Bit
 from src.basics.gf import GF
 from src.basics.alpha import Alpha
 from src.basics.polynomial import Polynomial
+
 # from src.encoder import Encoder
 # from src.decoder import Decoder
 
@@ -87,20 +88,21 @@ div_poly = [{'a': Polynomial([Bit(1), Bit(1), Bit(0), Bit(1)]),
              'c': Polynomial([Bit(1), Bit(1), Bit(1)]),
              'd': Polynomial([Bit(1), Bit(0)])}]
 
-
-ge_poly = [{'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(1)]), 'b': Polynomial([Bit(1), Bit(1), Bit(1), Bit(0)])},
-           {'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(0)]), 'b': Polynomial([Bit(1), Bit(1), Bit(0), Bit(1)])},
-           {'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)]), 'b': Polynomial([Bit(1), Bit(1)])},
+ge_poly = [{'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(1)]),
+            'b': Polynomial([Bit(1), Bit(1), Bit(1), Bit(0)])},
+           {'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(0)]),
+            'b': Polynomial([Bit(1), Bit(1), Bit(0), Bit(1)])},
+           {'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)]),
+            'b': Polynomial([Bit(1), Bit(1)])},
            {'a': Polynomial([Bit(1)]), 'b': Polynomial([Bit(0), Bit(0), Bit(1)])}]
 
-
-basic_alphas = [{
-    'a': GF(), 'b': [Alpha(0, 1, Polynomial([Bit(0), Bit(0), Bit(0), Bit(0), Bit(0), Bit(0), Bit(1)])),
-                     Alpha(1, 2, Polynomial([Bit(0), Bit(0), Bit(0), Bit(0), Bit(0), Bit(1), Bit(0)])),
-                     Alpha(2, 4, Polynomial([Bit(0), Bit(0), Bit(0), Bit(0), Bit(1), Bit(0), Bit(0)])),
-                     Alpha(3, 8, Polynomial([Bit(0), Bit(0), Bit(0), Bit(1), Bit(0), Bit(0), Bit(0)])),
-                     Alpha(4, 16, Polynomial([Bit(0), Bit(0), Bit(1), Bit(0), Bit(0), Bit(0), Bit(0)])),
-                     Alpha(5, 32, Polynomial([Bit(0), Bit(1), Bit(0), Bit(0), Bit(0), Bit(0), Bit(0)])),
-                     Alpha(6, 64, Polynomial([Bit(1), Bit(0), Bit(0), Bit(0), Bit(0), Bit(0), Bit(0)]))]
+alphas = [{
+    'a': GF(generating_polynomial=Polynomial([Bit(1), Bit(0), Bit(1), Bit(1)])),
+    'b': [Alpha(0, 1, 3),
+          Alpha(1, 2, 3),
+          Alpha(2, 4, 3),
+          Alpha(3, 3, 3),
+          Alpha(4, 6, 3),
+          Alpha(5, 7, 7),
+          Alpha(6, 5, 3)]
 }]
-
