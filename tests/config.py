@@ -1,7 +1,6 @@
 from src.basics.bit import Bit
 
 from src.basics.gf import GF
-from src.basics.alpha import Alpha
 from src.basics.polynomial import Polynomial
 
 # from src.encoder import Encoder
@@ -56,11 +55,11 @@ add_poly = [{'a': Polynomial([Bit(0), Bit(1), Bit(0), Bit(1), Bit(1), Bit(1)]),
 #      'c': Polynomial([Alpha(2, 2, 3), Alpha(3, 4, 3), Alpha(4, 3, 3)])}
 # ]
 
-add_alpha = [{'a': Alpha(2, 2, 3), 'b': Alpha(5, 6, 3), 'c': Alpha(3, 4, 3)},
-             {'a': Alpha(3, 4, 3), 'b': Alpha(6, 7, 3), 'c': Alpha(4, 3, 3)},
-             {'a': Alpha(5, 6, 3), 'b': Alpha(6, 7, 3), 'c': Alpha(1, 1, 3)},
-             {'a': Alpha(7, 5, 3), 'b': Alpha(5, 6, 3), 'c': Alpha(4, 3, 3)},
-             {'a': Alpha(7, 5, 3), 'b': Alpha(4, 3, 3), 'c': Alpha(5, 6, 3)}]
+add_alpha = [{'a': GF.Alpha(2, 2, 3), 'b': GF.Alpha(5, 6, 3), 'c': GF.Alpha(3, 4, 3)},
+             {'a': GF.Alpha(3, 4, 3), 'b': GF.Alpha(6, 7, 3), 'c': GF.Alpha(4, 3, 3)},
+             {'a': GF.Alpha(5, 6, 3), 'b': GF.Alpha(6, 7, 3), 'c': GF.Alpha(1, 1, 3)},
+             {'a': GF.Alpha(7, 5, 3), 'b': GF.Alpha(5, 6, 3), 'c': GF.Alpha(4, 3, 3)},
+             {'a': GF.Alpha(7, 5, 3), 'b': GF.Alpha(4, 3, 3), 'c': GF.Alpha(5, 6, 3)}]
 
 sub_poly = [{'a': Polynomial([Bit(0), Bit(1), Bit(0), Bit(1), Bit(1), Bit(1)]),
              'b': Polynomial([Bit(1), Bit(1), Bit(0), Bit(1), Bit(0), Bit(1)]),
@@ -110,12 +109,12 @@ ge_poly = [{'a': Polynomial([Bit(1), Bit(1), Bit(1), Bit(1)]),
 
 alphas = [{
     'a': GF(generating_polynomial=Polynomial([Bit(1), Bit(0), Bit(1), Bit(1)])),
-    'b': [GF.Alpha(0, 0, 3),
-          GF.Alpha(1, 1, 3),
-          GF.Alpha(2, 2, 3),
-          GF.Alpha(3, 4, 3),
-          GF.Alpha(4, 3, 3),
-          GF.Alpha(5, 6, 3),
-          GF.Alpha(6, 7, 7),
-          GF.Alpha(7, 5, 3)]
+    'b': [GF.Alpha(-1, 0, 3),
+          GF.Alpha(0, 1, 3),
+          GF.Alpha(1, 2, 3),
+          GF.Alpha(2, 4, 3),
+          GF.Alpha(3, 3, 3),
+          GF.Alpha(4, 6, 3),
+          GF.Alpha(5, 7, 7),
+          GF.Alpha(6, 5, 3)]
 }]

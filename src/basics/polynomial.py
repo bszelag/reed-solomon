@@ -1,7 +1,5 @@
 import logging
 from src.basics.bit import Bit
-from src.basics.alpha import Alpha
-from src.basics.exceptions import DivideByZeroException
 
 
 class Polynomial:
@@ -9,8 +7,8 @@ class Polynomial:
     def __init__(self, elements):
         self.index = len(elements)
         self.elements = elements
-        self.zero = Bit(0) if isinstance(self.elements[0], Bit) else Alpha(0, 0)
-        self.one = Bit(1) if isinstance(self.elements[0], Bit) else Alpha(1, 1)
+        self.zero = Bit(0) if isinstance(self.elements[0], Bit) else type(self.elements[0])(-1, 0)
+        self.one = Bit(1) if isinstance(self.elements[0], Bit) else type(self.elements[0])(0, 1)
         a_index = self.get_index_of_non_zero_element()
         if a_index is None:
             a_elements = [self.zero]
@@ -32,27 +30,6 @@ class Polynomial:
         return self.elements == other.elements
 
     def __ge__(self, other):
-        # a_index = self.get_index_of_one()
-        # if a_index is None:
-        #     a_elements = [self.zero]
-        # else:
-        #     a_elements = self.elements[a_index:]
-        #
-        # b_index = other.get_index_of_one()
-        # if b_index is None:
-        #     b_elements = [other.zero]
-        # else:
-        #     b_elements = other.elements[b_index:]
-        #
-        # if len(a_elements) > len(b_elements):
-        #     return True
-        # if len(a_elements) < len(b_elements):
-        #     return False
-        # for i in range(len(a_elements)):
-        #     if a_elements[i] < b_elements[i]:
-        #         return False
-        #     elif a_elements[i] > b_elements[i]:
-        #         return True
         if len(self.elements) > len(other.elements):
             return True
         if len(self.elements) < len(other.elements):
@@ -144,12 +121,11 @@ class Polynomial:
             result = result + str(e.value)
         return result
 
-
-if __name__ == '__main__':
-    # a = Polynomial([Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)])
-    # b = Polynomial([Bit(1), Bit(1)])
-    # print(a/b)
-    a = Polynomial([Alpha(1, 1, 3), Alpha(2, 2, 3), Alpha(3, 4, 3)])
-    b = Polynomial([Alpha(4, 3, 3), Alpha(5, 6, 3), Alpha(6, 7, 3)])
-    print(a+b)
-
+#
+# if __name__ == '__main__':
+#     # a = Polynomial([Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)])
+#     # b = Polynomial([Bit(1), Bit(1)])
+#     # print(a/b)
+#     # a = Polynomial([Alpha(1, 1, 3), Alpha(2, 2, 3), Alpha(3, 4, 3)])
+#     # b = Polynomial([Alpha(4, 3, 3), Alpha(5, 6, 3), Alpha(6, 7, 3)])
+#     # print(a+b)

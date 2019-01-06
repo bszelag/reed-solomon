@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43734d3f-233c-415b-9ca5-b87bba766f1b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/alpha.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/basics/gf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/gf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basics/polynomial.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/basics/polynomial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/encoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_alpha.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_alpha.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_gf.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_gf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_polynomial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_polynomial.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +20,7 @@
     <session id="1920138687">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
@@ -32,56 +34,58 @@
         <counts>
           <entry key="Makefile" value="2" />
           <entry key="gitignore" value="1" />
-          <entry key="py" value="44" />
+          <entry key="py" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="2" />
           <entry key="Git file" value="1" />
-          <entry key="Python" value="44" />
+          <entry key="Python" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="30" />
-          <entry key="py" value="11883" />
+          <entry key="py" value="12067" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="30" />
-          <entry key="Python" value="11883" />
+          <entry key="Python" value="12067" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/basics/gf.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/basics/bit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="747">
+              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
-                <marker date="1546801154669" expanded="true" signature="140:145" ph="..." />
-                <marker date="1546801154669" expanded="true" signature="574:580" ph="..." />
-                <marker date="1546801154669" expanded="true" signature="1133:1297" ph="..." />
-                <marker date="1546801154669" expanded="true" signature="1550:1559" ph="..." />
+                <marker date="1546728196146" expanded="true" signature="68:73" ph="..." />
+                <marker date="1546728196146" expanded="true" signature="150:187" ph="..." />
+                <marker date="1546728196146" expanded="true" signature="561:608" ph="..." />
+                <marker date="1546728196146" expanded="true" signature="602:608" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/basics/alpha.py">
+        <entry file="file://$PROJECT_DIR$/src/basics/gf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="37" selection-end-column="74" />
+            <state relative-caret-position="-268">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
-                <marker date="1546793235500" expanded="true" signature="73:78" ph="..." />
-                <marker date="1546793235500" expanded="true" signature="652:685" ph="..." />
+                <element signature="e#0#44#0" expanded="true" />
+                <marker date="1546803321155" expanded="true" signature="208:213" ph="..." />
+                <marker date="1546803321155" expanded="true" signature="636:642" ph="..." />
+                <marker date="1546803321155" expanded="true" signature="1195:1359" ph="..." />
+                <marker date="1546803321155" expanded="true" signature="1612:1621" ph="..." />
               </folding>
             </state>
           </provider>
@@ -99,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_gf.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -114,24 +118,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/encoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state relative-caret-position="468">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1546799183026" expanded="true" signature="156:161" ph="..." />
-                <marker date="1546799183026" expanded="true" signature="879:1000" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_bits.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1546801330200" expanded="true" signature="121:126" ph="..." />
+                <marker date="1546801330200" expanded="true" signature="856:977" ph="..." />
               </folding>
             </state>
           </provider>
@@ -140,24 +132,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/basics/polynomial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="97" column="34" lean-forward="true" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
+            <state relative-caret-position="-1348">
+              <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1546792979019" expanded="true" signature="156:162" ph="..." />
-                <marker date="1546792979019" expanded="true" signature="662:734" ph="..." />
-                <marker date="1546792979019" expanded="true" signature="2140:2278" ph="..." />
-                <marker date="1546792979019" expanded="true" signature="2302:2346" ph="..." />
-                <marker date="1546792979019" expanded="true" signature="3150:3191" ph="..." />
-                <marker date="1546792979019" expanded="true" signature="4326:4335" ph="..." />
+                <marker date="1546803349942" expanded="true" signature="65:71" ph="..." />
+                <marker date="1546803349942" expanded="true" signature="606:678" ph="..." />
+                <marker date="1546803349942" expanded="true" signature="1350:1488" ph="..." />
+                <marker date="1546803349942" expanded="true" signature="1512:1556" ph="..." />
+                <marker date="1546803349942" expanded="true" signature="2360:2401" ph="..." />
+                <marker date="1546803349942" expanded="true" signature="3536:3545" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__init__.py">
+        <entry file="file://$PROJECT_DIR$/src/decoder.py">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/basics/exceptions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+              <folding>
+                <marker date="1546643824175" expanded="true" signature="23:35" ph="..." />
+                <marker date="1546643824175" expanded="true" signature="70:75" ph="..." />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -176,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+            <state relative-caret-position="704">
+              <caret line="118" column="20" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -198,6 +203,7 @@
     <findStrings>
       <find>: 1</find>
       <find>cls</find>
+      <find>Al</find>
     </findStrings>
     <replaceStrings>
       <replace>: Bit(1)</replace>
@@ -219,14 +225,14 @@
         <option value="$PROJECT_DIR$/tests/test_bits.py" />
         <option value="$PROJECT_DIR$/src/basics/exceptions.py" />
         <option value="$PROJECT_DIR$/src/basics/bit.py" />
-        <option value="$PROJECT_DIR$/src/basics/polynomial.py" />
         <option value="$PROJECT_DIR$/src/basics/alpha.py" />
-        <option value="$PROJECT_DIR$/src/encoder.py" />
         <option value="$PROJECT_DIR$/tests/test_alpha.py" />
         <option value="$PROJECT_DIR$/tests/test_polynomial.py" />
-        <option value="$PROJECT_DIR$/tests/test_gf.py" />
-        <option value="$PROJECT_DIR$/src/basics/gf.py" />
+        <option value="$PROJECT_DIR$/src/encoder.py" />
         <option value="$PROJECT_DIR$/tests/config.py" />
+        <option value="$PROJECT_DIR$/src/basics/gf.py" />
+        <option value="$PROJECT_DIR$/src/basics/polynomial.py" />
+        <option value="$PROJECT_DIR$/tests/test_gf.py" />
       </list>
     </option>
   </component>
@@ -282,7 +288,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546801203270" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546803379732" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -319,12 +325,12 @@
       <workItem from="1546608834878" duration="4521000" />
       <workItem from="1546632961743" duration="10469000" />
       <workItem from="1546701436488" duration="18532000" />
-      <workItem from="1546780963657" duration="12841000" />
+      <workItem from="1546780963657" duration="15616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70328000" />
+    <option name="totallyTimeSpent" value="73103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -380,9 +386,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/bit_tests.py" />
-    <entry file="file://$PROJECT_DIR$/src/decoder.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -392,32 +395,8 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/basics/exceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-          <folding>
-            <marker date="1546643824175" expanded="true" signature="23:35" ph="..." />
-            <marker date="1546643824175" expanded="true" signature="70:75" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_encoder.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/basics/bit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding>
-            <marker date="1546728196146" expanded="true" signature="68:73" ph="..." />
-            <marker date="1546728196146" expanded="true" signature="150:187" ph="..." />
-            <marker date="1546728196146" expanded="true" signature="561:608" ph="..." />
-            <marker date="1546728196146" expanded="true" signature="602:608" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -434,45 +413,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1546799183026" expanded="true" signature="156:161" ph="..." />
-            <marker date="1546799183026" expanded="true" signature="879:1000" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/basics/polynomial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="97" column="34" lean-forward="true" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1546792979019" expanded="true" signature="156:162" ph="..." />
-            <marker date="1546792979019" expanded="true" signature="662:734" ph="..." />
-            <marker date="1546792979019" expanded="true" signature="2140:2278" ph="..." />
-            <marker date="1546792979019" expanded="true" signature="2302:2346" ph="..." />
-            <marker date="1546792979019" expanded="true" signature="3150:3191" ph="..." />
-            <marker date="1546792979019" expanded="true" signature="4326:4335" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/basics/alpha.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="37" selection-end-column="74" />
-          <folding>
-            <marker date="1546793235500" expanded="true" signature="73:78" ph="..." />
-            <marker date="1546793235500" expanded="true" signature="652:685" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_alpha.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -495,20 +435,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_gf.py">
+    <entry file="file://$PROJECT_DIR$/src/basics/alpha.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="37" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/basics/bit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1546728196146" expanded="true" signature="68:73" ph="..." />
+            <marker date="1546728196146" expanded="true" signature="150:187" ph="..." />
+            <marker date="1546728196146" expanded="true" signature="561:608" ph="..." />
+            <marker date="1546728196146" expanded="true" signature="602:608" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/basics/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+          <folding>
+            <marker date="1546643824175" expanded="true" signature="23:35" ph="..." />
+            <marker date="1546643824175" expanded="true" signature="70:75" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decoder.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1546801330200" expanded="true" signature="121:126" ph="..." />
+            <marker date="1546801330200" expanded="true" signature="856:977" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        <state relative-caret-position="704">
+          <caret line="118" column="20" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -517,14 +493,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/basics/gf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="-268">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-            <marker date="1546801154669" expanded="true" signature="140:145" ph="..." />
-            <marker date="1546801154669" expanded="true" signature="574:580" ph="..." />
-            <marker date="1546801154669" expanded="true" signature="1133:1297" ph="..." />
-            <marker date="1546801154669" expanded="true" signature="1550:1559" ph="..." />
+            <marker date="1546803321155" expanded="true" signature="208:213" ph="..." />
+            <marker date="1546803321155" expanded="true" signature="636:642" ph="..." />
+            <marker date="1546803321155" expanded="true" signature="1195:1359" ph="..." />
+            <marker date="1546803321155" expanded="true" signature="1612:1621" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/basics/polynomial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1348">
+          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1546803349942" expanded="true" signature="65:71" ph="..." />
+            <marker date="1546803349942" expanded="true" signature="606:678" ph="..." />
+            <marker date="1546803349942" expanded="true" signature="1350:1488" ph="..." />
+            <marker date="1546803349942" expanded="true" signature="1512:1556" ph="..." />
+            <marker date="1546803349942" expanded="true" signature="2360:2401" ph="..." />
+            <marker date="1546803349942" expanded="true" signature="3536:3545" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_gf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,6 @@
 from src.basics.gf import GF
 from src.basics.polynomial import Polynomial
 from src.basics.bit import Bit
-from src.basics.alpha import Alpha
 
 
 class Encoder:
@@ -15,10 +14,10 @@ class Encoder:
         self.coding_polynomial = self.get_coding_polynomial()
 
     def get_coding_polynomial(self):
-        result = Polynomial([Alpha(1, 1, self.gf.index), Alpha(1, 1, self.gf.index)])
+        result = Polynomial([GF.Alpha(1, 1, self.gf.index), GF.Alpha(1, 1, self.gf.index)])
         for i in range(2, self.r):
-            result = result * Polynomial([Alpha(1, 1, self.gf.index),
-                                          Alpha(i, self.gf.alpha_elements_by_index[i], self.gf.index)])
+            result = result * Polynomial([GF.Alpha(1, 1, self.gf.index),
+                                          GF.Alpha(i, self.gf.alpha_elements_by_index[i], self.gf.index)])
             print('Partial result coding: ' + str(result))
         print(result)
         return result
