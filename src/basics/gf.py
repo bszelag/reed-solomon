@@ -17,9 +17,10 @@ class GF:
 
     def generate_alpha_elements(self):
         all_alpha_elements = (pow(2, self.index)) - 1
-        logging.error(all_alpha_elements)
+        # logging.error(all_alpha_elements)
+        self.alpha_elements.append(Alpha(index=0, value=0, gf_index=self.index))
         poly = Polynomial([Bit(1)])
-        for i in range(all_alpha_elements):
+        for i in range(1, all_alpha_elements):
             a = poly % self.generating_polynomial
             logging.error(a)
             self.alpha_elements.append(Alpha(index=i, value=int(a.get_string_representation(), 2), gf_index=self.index))

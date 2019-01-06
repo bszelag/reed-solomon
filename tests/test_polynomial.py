@@ -1,14 +1,21 @@
 import pytest
 from src.basics.exceptions import DivideByZeroException
-from tests.config import add_poly, sub_poly, mul_poly, div_poly, ge_poly
+from tests.config import add_poly, sub_poly, mul_poly, div_poly, ge_poly, add_poly_with_alphas
 
-from src.basics.polynomial import Polynomial
-from src.basics.bit import Bit
 
 @pytest.mark.parametrize("params", add_poly)
 def test_addition(params):
     result = params['a'] + params['b']
     assert result == params['c']
+
+
+@pytest.mark.parametrize("params", add_poly_with_alphas)
+def test_addition(params):
+    result = params['a'] + params['b']
+    print(result)
+    for i in range(len(result.elements)):
+        print(str(i) + ': ' + str(result.elements[i]))
+        assert result.elements[i].value == params['c'].elements[i].value
 
 
 @pytest.mark.parametrize("params", sub_poly)
@@ -29,10 +36,6 @@ def test_multiplication(params):
 def test_div(params):
     result = params['a'].__div__(params['b'])
     reminder = params['a'].__mod__(params['b'])
-    print(result)
-    print(reminder)
-    print(params['c'])
-    print(params['d'])
     assert result == params['c']
     assert reminder == params['d']
 

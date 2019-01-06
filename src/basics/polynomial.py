@@ -11,7 +11,7 @@ class Polynomial:
         self.elements = elements
         self.zero = Bit(0) if isinstance(self.elements[0], Bit) else Alpha(0, 0)
         self.one = Bit(1) if isinstance(self.elements[0], Bit) else Alpha(1, 1)
-        a_index = self.get_index_of_one()
+        a_index = self.get_index_of_non_zero_element()
         if a_index is None:
             a_elements = [self.zero]
         else:
@@ -29,52 +29,44 @@ class Polynomial:
         return result
 
     def __eq__(self, other):
-        a_index = self.get_index_of_one()
-        if a_index is None:
-            a_elements = [Bit(0)]
-        else:
-            a_elements = self.elements[a_index:]
-
-        b_index = other.get_index_of_one()
-        if b_index is None:
-            b_elements = [Bit(0)]
-        else:
-            b_elements = other.elements[b_index:]
-        if len(a_elements) != len(b_elements):
-            return False
-        return a_elements == b_elements
+        return self.elements == other.elements
 
     def __ge__(self, other):
-        """
-        :param other:
-        :return:
-        """
-        a_index = self.get_index_of_one()
-        if a_index is None:
-            a_elements = [Bit(0)]
-        else:
-            a_elements = self.elements[a_index:]
-
-        b_index = other.get_index_of_one()
-        if b_index is None:
-            b_elements = [Bit(0)]
-        else:
-            b_elements = other.elements[b_index:]
-
-        if len(a_elements) > len(b_elements):
+        # a_index = self.get_index_of_one()
+        # if a_index is None:
+        #     a_elements = [self.zero]
+        # else:
+        #     a_elements = self.elements[a_index:]
+        #
+        # b_index = other.get_index_of_one()
+        # if b_index is None:
+        #     b_elements = [other.zero]
+        # else:
+        #     b_elements = other.elements[b_index:]
+        #
+        # if len(a_elements) > len(b_elements):
+        #     return True
+        # if len(a_elements) < len(b_elements):
+        #     return False
+        # for i in range(len(a_elements)):
+        #     if a_elements[i] < b_elements[i]:
+        #         return False
+        #     elif a_elements[i] > b_elements[i]:
+        #         return True
+        if len(self.elements) > len(other.elements):
             return True
-        if len(a_elements) < len(b_elements):
+        if len(self.elements) < len(other.elements):
             return False
-        for i in range(len(a_elements)):
-            if a_elements[i] < b_elements[i]:
+        for i in range(len(self.elements)):
+            if self.elements[i] < other.elements[i]:
                 return False
-            elif a_elements[i] > b_elements[i]:
+            elif self.elements[i] > other.elements[i]:
                 return True
         return True
 
-    def get_index_of_one(self):
+    def get_index_of_non_zero_element(self):
         for i in range(len(self.elements)):
-            if self.elements[i].value == self.one.value:
+            if self.elements[i].value > 0:
                 return i
         return None
 
@@ -87,16 +79,23 @@ class Polynomial:
     def __add__(self, other):
         a_poly = self.elements
         b_poly = other.elements
+        logging.error('a=' + str(Polynomial(a_poly)) + '+ b=' + str(Polynomial(b_poly)))
         result_elements = []
         diff = abs(len(a_poly) - len(b_poly))
         if len(a_poly) > len(b_poly):
             b_poly = diff*[self.zero] + b_poly
-        else:
+        elif len(a_poly) < len(b_poly):
             a_poly = diff*[self.zero] + a_poly
-        for i in range(len(a_poly))[::-1]:
-            result_elements.append(a_poly[i] + b_poly[i])
-        result = Polynomial(result_elements[::-1])
+
+        for i in range(len(a_poly)):
+            result = a_poly[i] + b_poly[i]
+            logging.error(str(a_poly[i]) + ' + ' + str(b_poly[i]) + ' = ' + str(result))
+            result_elements.append(result)
+        result = Polynomial(result_elements)
         return result
+
+    def __radd__(self, other):
+        return self.__add__(other)
 
     def __sub__(self, other):
         return self.__add__(other)
@@ -118,36 +117,6 @@ class Polynomial:
         return self.__mul__(other)
 
     def __divmod__(self, other):
-        # if other == Polynomial([self.zero]):
-        #     raise DivideByZeroException('Cannot divide polynomial by zero!')
-        # result_elements = []
-        # reminder_elements = [Bit(0)]
-        #
-        # for i in range(len(self.elements)):
-        #     reminder_elements = reminder_elements + [self.zero]
-        #     reminder_elements[len(reminder_elements)-1] = self.elements[i]
-        #     if Polynomial(reminder_elements) >= other:
-        #         reminder_elements_result_poly = Polynomial(reminder_elements) - other
-        #         reminder_elements = reminder_elements_result_poly.elements
-        #         result_elements.insert(i, self.one)
-        #     else:
-        #         result_elements.insert(i, self.zero)
-        #
-        # if not result_elements:
-        #     result_elements = [Bit(0)]
-        #
-        # a_index = Polynomial(result_elements).get_index_of_one()
-        # if a_index is None:
-        #     a_elements = [Bit(0)]
-        # else:
-        #     a_elements = result_elements[a_index:]
-        #
-        # b_index = Polynomial(reminder_elements).get_index_of_one()
-        # if b_index is None:
-        #     b_elements = [Bit(0)]
-        # else:
-        #     b_elements = reminder_elements[b_index:]
-        # return Polynomial(a_elements), Polynomial(b_elements)
         q = Polynomial([self.zero])
         r = Polynomial(self.elements)
         while r != Polynomial([self.zero]) and len(r) >= len(other):
@@ -177,7 +146,10 @@ class Polynomial:
 
 
 if __name__ == '__main__':
-    a = Polynomial([Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)])
-    b = Polynomial([Bit(1), Bit(1)])
-    print(a/b)
+    # a = Polynomial([Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)])
+    # b = Polynomial([Bit(1), Bit(1)])
+    # print(a/b)
+    a = Polynomial([Alpha(1, 1, 3), Alpha(2, 2, 3), Alpha(3, 4, 3)])
+    b = Polynomial([Alpha(4, 3, 3), Alpha(5, 6, 3), Alpha(6, 7, 3)])
+    print(a+b)
 
