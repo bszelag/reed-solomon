@@ -1,6 +1,5 @@
 import logging
-from bit import Bit
-from exceptions import DivideByZeroException
+from src.basics.bit import Bit
 
 
 class Polynomial:
@@ -8,8 +7,15 @@ class Polynomial:
     def __init__(self, elements):
         self.index = len(elements)
         self.elements = elements
-        self.zero = Bit(0) if isinstance(self.elements[0], Bit) else Bit(0)
-        self.one = Bit(1) if isinstance(self.elements[0], Bit) else Bit(1)
+        self.zero = Bit(0) if isinstance(self.elements[0], Bit) else type(self.elements[0])(-1, 0)
+        self.one = Bit(1) if isinstance(self.elements[0], Bit) else type(self.elements[0])(0, 1)
+        a_index = self.get_index_of_non_zero_element()
+        # if isinstance(self.elements[0], Bit) else 0
+        if a_index is None:
+            a_elements = [self.zero]
+        else:
+            a_elements = self.elements[a_index:]
+        self.elements = a_elements
 
     def __len__(self):
         self.index = len(self.elements)
@@ -18,56 +24,27 @@ class Polynomial:
     def __str__(self):
         result = ''
         for e in self.elements:
-            result = result + str(e.value)
+            result = result + str(e.value) + ' '
         return result
 
     def __eq__(self, other):
-        a_index = self.get_index_of_one()
-        if a_index is None:
-            a_elements = [Bit(0)]
-        else:
-            a_elements = self.elements[a_index:]
-
-        b_index = other.get_index_of_one()
-        if b_index is None:
-            b_elements = [Bit(0)]
-        else:
-            b_elements = other.elements[b_index:]
-        if len(a_elements) != len(b_elements):
-            return False
-        return a_elements == b_elements
+        return self.elements == other.elements
 
     def __ge__(self, other):
-        """
-        :param other:
-        :return:
-        """
-        a_index = self.get_index_of_one()
-        if a_index is None:
-            a_elements = [Bit(0)]
-        else:
-            a_elements = self.elements[a_index:]
-
-        b_index = other.get_index_of_one()
-        if b_index is None:
-            b_elements = [Bit(0)]
-        else:
-            b_elements = other.elements[b_index:]
-
-        if len(a_elements) > len(b_elements):
+        if len(self.elements) > len(other.elements):
             return True
-        if len(a_elements) < len(b_elements):
+        if len(self.elements) < len(other.elements):
             return False
-        for i in range(len(a_elements)):
-            if a_elements[i] < b_elements[i]:
+        for i in range(len(self.elements)):
+            if self.elements[i] < other.elements[i]:
                 return False
-            elif a_elements[i] > b_elements[i]:
+            elif self.elements[i] > other.elements[i]:
                 return True
         return True
 
-    def get_index_of_one(self):
+    def get_index_of_non_zero_element(self):
         for i in range(len(self.elements)):
-            if self.elements[i].value == self.one.value:
+            if self.elements[i].value > 0:
                 return i
         return None
 
@@ -84,12 +61,17 @@ class Polynomial:
         diff = abs(len(a_poly) - len(b_poly))
         if len(a_poly) > len(b_poly):
             b_poly = diff*[self.zero] + b_poly
-        else:
+        elif len(a_poly) < len(b_poly):
             a_poly = diff*[self.zero] + a_poly
-        for i in range(len(a_poly))[::-1]:
-            result_elements.append(a_poly[i] + b_poly[i])
-        result = Polynomial(result_elements[::-1])
+
+        for i in range(len(a_poly)):
+            result = a_poly[i] + b_poly[i]
+            result_elements.append(result)
+        result = Polynomial(result_elements)
         return result
+
+    def __radd__(self, other):
+        return self.__add__(other)
 
     def __sub__(self, other):
         return self.__add__(other)
@@ -110,25 +92,34 @@ class Polynomial:
     def __rmul__(self, other):
         return self.__mul__(other)
 
-    def __div__(self, other):
-        if other == Polynomial([self.zero]):
-            raise DivideByZeroException('Cannot divide polynomial by zero!')
-        result_elements = []
-        reminder_elements = [Bit(0)]
+    def __divmod__(self, other):
+        q = Polynomial([self.zero])
+        r = Polynomial(self.elements)
+        while r != Polynomial([self.zero]) and len(r) >= len(other):
+            t = r.elements[0] / other.elements[0]
+            t = Polynomial([t]+[self.zero]*(len(r) - len(other)))
+            q = q + t
+            r = r - (t * other)
+        return q, r
 
+    def __mod__(self, other):
+        _, reminder = self.__divmod__(other)
+        return reminder
+
+    def __truediv__(self, other):
+        result, _ = self.__divmod__(other)
+        return result
+
+    __div__ = __truediv__
+
+    def get_string_representation(self):
+        result = ''
+        for e in self.elements:
+            result = result + str(e.value)
+        return result
+
+    def get_hamming_weight(self):
+        weight = 0
         for i in range(len(self.elements)):
-            reminder_elements = reminder_elements + [self.zero]
-            reminder_elements[len(reminder_elements)-1] = self.elements[i]
-            logging.error("reminder: " + str(Polynomial(reminder_elements)))
-            logging.error("other: " + str(other))
-            if Polynomial(reminder_elements) >= other:
-                logging.error("result of r-d = " + str(Polynomial(reminder_elements) - other))
-                reminder_elements_result_poly = Polynomial(reminder_elements) - other
-                reminder_elements = reminder_elements_result_poly.elements
-                result_elements.insert(i, self.one)
-            else:
-                result_elements.insert(i, self.zero)
-
-        if not result_elements:
-            result_elements = [Bit(0)]
-        return Polynomial(result_elements), Polynomial(reminder_elements)
+            weight = weight + 1 if self.elements[i] != self.zero else weight
+        return weight

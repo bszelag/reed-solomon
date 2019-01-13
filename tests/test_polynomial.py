@@ -8,6 +8,15 @@ def test_addition(params):
     result = params['a'] + params['b']
     assert result == params['c']
 
+#
+# @pytest.mark.parametrize("params", add_poly_with_alphas)
+# def test_addition(params):
+#     result = params['a'] + params['b']
+#     print(result)
+#     for i in range(len(result.elements)):
+#         print(str(i) + ': ' + str(result.elements[i]))
+#         assert result.elements[i].value == params['c'].elements[i].value
+
 
 @pytest.mark.parametrize("params", sub_poly)
 def test_subtraction(params):
@@ -25,11 +34,8 @@ def test_multiplication(params):
 
 @pytest.mark.parametrize("params", div_poly)
 def test_div(params):
-    result, reminder = params['a'] / params['b']
-    print(result)
-    print(reminder)
-    print(params['c'])
-    print(params['d'])
+    result = params['a'].__div__(params['b'])
+    reminder = params['a'].__mod__(params['b'])
     assert result == params['c']
     assert reminder == params['d']
 

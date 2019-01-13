@@ -10,3 +10,8 @@ class DivideByZeroException(Error):
 class AlphasFromDifferentField(Error):
     def __init__(self):
         self.message = "Alpha elements are from different GF"
+
+
+class CannotDetectErrorException(Error):
+    def __init__(self):
+        self.message = "Cannot detect and fix errors"
