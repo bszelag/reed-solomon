@@ -10,6 +10,7 @@ class Polynomial:
         self.zero = Bit(0) if isinstance(self.elements[0], Bit) else type(self.elements[0])(-1, 0)
         self.one = Bit(1) if isinstance(self.elements[0], Bit) else type(self.elements[0])(0, 1)
         a_index = self.get_index_of_non_zero_element()
+        # if isinstance(self.elements[0], Bit) else 0
         if a_index is None:
             a_elements = [self.zero]
         else:
@@ -23,7 +24,7 @@ class Polynomial:
     def __str__(self):
         result = ''
         for e in self.elements:
-            result = result + str(e.value)
+            result = result + str(e.value) + ' '
         return result
 
     def __eq__(self, other):
@@ -56,7 +57,6 @@ class Polynomial:
     def __add__(self, other):
         a_poly = self.elements
         b_poly = other.elements
-        logging.error('a=' + str(Polynomial(a_poly)) + '+ b=' + str(Polynomial(b_poly)))
         result_elements = []
         diff = abs(len(a_poly) - len(b_poly))
         if len(a_poly) > len(b_poly):
@@ -66,7 +66,6 @@ class Polynomial:
 
         for i in range(len(a_poly)):
             result = a_poly[i] + b_poly[i]
-            logging.error(str(a_poly[i]) + ' + ' + str(b_poly[i]) + ' = ' + str(result))
             result_elements.append(result)
         result = Polynomial(result_elements)
         return result
@@ -101,8 +100,6 @@ class Polynomial:
             t = Polynomial([t]+[self.zero]*(len(r) - len(other)))
             q = q + t
             r = r - (t * other)
-            logging.error(r)
-            logging.error(q)
         return q, r
 
     def __mod__(self, other):
@@ -121,11 +118,8 @@ class Polynomial:
             result = result + str(e.value)
         return result
 
-#
-# if __name__ == '__main__':
-#     # a = Polynomial([Bit(1), Bit(1), Bit(1), Bit(0), Bit(1)])
-#     # b = Polynomial([Bit(1), Bit(1)])
-#     # print(a/b)
-#     # a = Polynomial([Alpha(1, 1, 3), Alpha(2, 2, 3), Alpha(3, 4, 3)])
-#     # b = Polynomial([Alpha(4, 3, 3), Alpha(5, 6, 3), Alpha(6, 7, 3)])
-#     # print(a+b)
+    def get_hamming_weight(self):
+        weight = 0
+        for i in range(len(self.elements)):
+            weight = weight + 1 if self.elements[i] != self.zero else weight
+        return weight
