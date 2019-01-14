@@ -8,7 +8,7 @@ def run_example_program():
     e = Encoder()
     d = Decoder(coding_polynomial=e.coding_polynomial, k=e.k, t=e.r, gf_index=e.gf.index)
 
-    message = 'Hello my dear friends, I am a program!'
+    message = 'lets find out why this is not working, ok'
     print('Message: ' + message)
     codeword = e.encode(message)
     print('Codeword: ' + str(codeword))
