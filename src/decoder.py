@@ -1,6 +1,5 @@
 from src.basics.gf import GF
 from src.basics.polynomial import Polynomial
-from src.basics.bit import Bit
 from src.basics.exceptions import CannotDetectErrorException
 
 
@@ -23,7 +22,7 @@ class Decoder:
             syndrome = self.get_syndrome(codeword)
             weight = syndrome.get_hamming_weight()
             # print('Code: ' + str(codeword) + ' len=' + str(len(codeword)))
-            print('Syndrome: ' + str(syndrome) + ', Weight: ' + str(weight))
+            # print('Syndrome: ' + str(syndrome) + ', Weight: ' + str(weight))
             if weight <= self.t:
                 newcodeword = codeword + syndrome
                 if i > 0:
@@ -39,7 +38,6 @@ class Decoder:
 
     def decode(self, codeword):
         decoded_polynomial = self.get_decoded_polynomial(codeword)
-        decoded_polynomial = decoded_polynomial - self.coding_polynomial
         print(decoded_polynomial)
         result = []
 

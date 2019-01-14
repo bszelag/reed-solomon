@@ -8,7 +8,7 @@ def test_addition(params):
     assert result == params['c']
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 @pytest.mark.parametrize("params", alphas_multiplicative_inversions)
 def test_multiplicative_inversions(params):
     result = params['a'].multiplicative_inversion()

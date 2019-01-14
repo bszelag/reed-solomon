@@ -1,24 +1,30 @@
 import pytest
-from tests.config import decoder, proper_codewords, codeword_with_error, codeword_without_fix
-from src.decoder import Decoder
+from tests.config import test_messages
 from src.basics.exceptions import CannotDetectErrorException
 
 
-@pytest.mark.parametrize("codewords", proper_codewords)
-def test_encoder(codewords):
-    decoded_message = decoder.decode(codewords['codeword'])
+@pytest.mark.parametrize("message", test_messages)
+def test_encoder(message, decoder, encoder):
+    encoded_message = encoder.encode(message)
+    decoded_message = decoder.decode(encoded_message)
     print(decoded_message)
-    assert codewords['message'] in decoded_message
+    assert message in decoded_message
 
 
-@pytest.mark.parametrize("codewords", codeword_with_error)
-def test_encoder_with_errors(codewords):
-    decoded_message = decoder.decode(codewords['codeword'])
+@pytest.mark.parametrize("message", test_messages)
+def test_encoder_fix_errors(message, decoder, encoder):
+    encoded_message = encoder.encode(message)
+    for i in range(1, 27):
+        encoded_message.elements[i] = encoded_message.elements[i].multiplicative_inversion()
+    decoded_message = decoder.decode(encoded_message)
     print(decoded_message)
-    assert codewords['message'] in decoded_message
+    assert message in decoded_message
 
 
-@pytest.mark.parametrize("codewords", codeword_without_fix)
-def test_encoder_cannot_fix_codeword(codewords):
+@pytest.mark.parametrize("message", test_messages)
+def test_encoder_fails(message, decoder, encoder):
+    encoded_message = encoder.encode(message)
+    for i in range(0, 27):
+        encoded_message.elements[i] = encoded_message.elements[i].multiplicative_inversion()
     with pytest.raises(CannotDetectErrorException):
-        decoder.decode(codewords['codeword'])
+        decoder.decode(encoded_message)
