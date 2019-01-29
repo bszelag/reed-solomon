@@ -3,19 +3,17 @@ from src.decoder import Decoder
 from src.basics.gf import GF
 from src.basics.exceptions import CannotDetectErrorException
 
+k = [4, 12, 20, 26, 27]
+tests_types = ['multiple', 'burst']
 
-def run_example_program():
+
+def run_tests():
     e = Encoder()
     d = Decoder(coding_polynomial=e.coding_polynomial, k=e.k, t=e.r, gf_index=e.gf.index)
 
-    # message = 'lets find out why this is not working, ok'
     message = "zaqwsxcderfvbgtyhnmjuik,ol.p;/zaqwsxedcrfvtgbyhnujmzaqwsxcderf"
-    # message = "zaqwsxcderfvbgtyhnmjuik,ol.p;/zaqwsxedcrfvtgbyhnujmzaqwsxcderfzaqwsxedca"
-    print('Message: ' + message)
     codeword = e.encode(message)
-    print('Codeword: ' + str(codeword))
     decoded_message = d.decode(codeword, 'basic')
-    print('Decoded message: ' + decoded_message[:len(message)])
 
     for i in range(2, 28):
         codeword.elements[i] = codeword.elements[i].multiplicative_inversion()
@@ -26,4 +24,6 @@ def run_example_program():
 
 
 if __name__ == '__main__':
-    run_example_program()
+    for t in tests_types:
+        for i in k:
+            run_tests(k, t)

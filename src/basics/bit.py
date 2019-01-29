@@ -27,8 +27,6 @@ class Bit:
         return self.value <= other.value
 
     def __add__(self, other):
-        # if type(other) is not Bit:
-        #     other = Bit(0)
         result = Bit(self.value ^ other.value)
         return result
 

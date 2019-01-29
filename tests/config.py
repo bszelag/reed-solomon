@@ -126,5 +126,13 @@ alphas = [{
 }]
 
 test_messages = ["This is a message for RS encoder",
-                 "This is a message for RS encoderThis is a message for RS encoder",
-                 "This is a message for RS encoderThis is a message for RS encoderThis is a"]
+                 "This is a message for RS encoderThis is a message.",
+                 "Lets try smth else!"]
+
+message = "zaqwsxcderfvbgtyhnmjuik,ol.p;/zaqwsxedcrfvtgbyhnujmzaqwsxcderfvbgtyhn"
+
+
+k = [4, 12, 20, 26, 27]
+tests_types = ['multiple', 'burst']
+
+
