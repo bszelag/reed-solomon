@@ -43,18 +43,6 @@ class Decoder:
                     codeword = Polynomial(codes)
             raise CannotDetectErrorException
 
-    def _get_error_locator(self, syndrome):
-        sigma, omega = 0, 0
-        return sigma, omega
-
-    def _find_errors_chien_search(self, sigma):
-        x, j = 0, 0
-        return x, j
-
-    def _find_error_magnitude_forney(self, omega, x):
-        y = 0
-        return y
-
     def advanced_decoder(self, codeword):
         # TODO - ALGORITHM
         # Calculate syndrome
@@ -62,22 +50,7 @@ class Decoder:
         # Find roots of L(x) with Chien search
         # Using Forney's algorithm find symbol error values (using syndrome and L(x) roots)
         # Fix message
-        if self.code_is_valid(codeword):
-            return codeword[:-(self.n - self.k)]
-        else:
-            syndrome = self.get_syndrome(codeword)
-            sigma, omega = self._get_error_locator(syndrome)
-            x, j = self._find_errors_chien_search(sigma)
-            if x is None or j is None:
-                raise CannotDetectErrorException
-            y = self._find_error_magnitude_forney(omega, x)
-
-            errors = Polynomial([GF.Alpha(-1, 0, self.gf_index)])
-
-            message_output = codeword - errors
-            if not self.code_is_valid(message_output):
-                raise CannotDetectErrorException
-            return message_output
+        return None
 
     def decode(self, codeword, algorithm):
         full_decoded_polynomial = self.decoders[algorithm](codeword)
